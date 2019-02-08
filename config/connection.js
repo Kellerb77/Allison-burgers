@@ -1,11 +1,15 @@
 var mysql = require('mysql');
 var connection;
-var connection = mysql.createConnection({
-		host: "us-cdbr-iron-east-03.cleardb.net",
-		username: "beecedf3856d5b",
-		password: "f01a42f4",
-		database: "heroku_efc15be4b056e43"
-	});
+if (process.env.NODE_ENV==="production") {
+    connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
+} else {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'burger_db'
+    });
+}
 // /////////////////////old
 // var connection = mysql.createConnection({
 // 		host: "localhost",
