@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 var connection;
-if (process.env.CLEARDB_DATABASE_URL) {
-    connection = mysql.createConnection('mysql://bc07b91e407eff:54bbf382@us-cdbr-iron-east-03.cleardb.net/heroku_77a7806bfe895b6?reconnect=true');
+if (process.env.JawsDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
         host: 'localhost',
