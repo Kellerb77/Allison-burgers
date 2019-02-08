@@ -1,15 +1,11 @@
 var mysql = require('mysql');
 var connection;
-if (process.env.JawsDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'burger_db'
-    });
-}
+var connection = mysql.createConnection({
+		host: "us-cdbr-iron-east-03.cleardb.net",
+		username: "beecedf3856d5b",
+		password: "f01a42f4",
+		database: "heroku_efc15be4b056e43"
+	});
 // /////////////////////old
 // var connection = mysql.createConnection({
 // 		host: "localhost",
